@@ -1,0 +1,21 @@
+{
+	"scopeName" : "source.clp",
+	"name" : "Clips",
+	"comment" : "Clips language",
+	"fileTypes" : [
+		"clp"
+	],
+	"patterns" : [
+		{
+			"comment" : "Line comments",
+			"begin" : ";",
+			"end" : "$",
+			"beginCaptures":{
+				"0" : {
+					"name" : "punctuation.definition.comment.clp"
+				}
+			},
+			"name" : "comment.line.semi-colon.clp"
+		}
+	]
+}

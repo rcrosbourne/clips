@@ -1,0 +1,46 @@
+{
+	"name": "clips",
+	"displayName": "Clips",
+	"description": "Clips Support for Visual Studio Code",
+	"version": "0.0.1",
+	"publisher": "fls",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Languages"
+	],
+	"activationEvents": [
+		"onLaguage:clips"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "clips",
+				"aliases": ["Clips"],
+				"extensions": [".clp"]
+			}
+		],
+		"grammars": [
+			{
+				"language": "clips",
+				"id": "clips",
+				"scopeName": "source.clp",
+				"path": "./syntaxes/clips.json"
+			}
+		],
+		"commands": [{
+			"command": "extension.sayHello",
+			"title": "Hello World"
+		}]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	}
+}
