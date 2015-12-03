@@ -5,35 +5,41 @@
 	"fileTypes" : [
 		"clp"
 	],
-	"foldingStartMarker" : "^\\(",
-	"foldingStopMarker": "\\)",
-	"patterns" : [
+	"foldingStartMarker" : "^\\(\\s*",
+	"foldingStopMarker": "\\s*\\)",
+	"patterns" : [		
 		{
-			"comment" : "Line comments",
-			"begin" : ";",
-			"end" : "$",
-			"beginCaptures":{
-				"0" : {
-					"name" : "punctuation.definition.comment.clp"
-				}
-			},
-			"name" : "comment.line.double-slash.clp"
+			"include" : "#comments"
 		},
 		{
-			"name" : "keyword.clp",
-			"match": "\\b(defrule|assert|retract)\\b"
+			"include" : "#keywords"			
 		},
 		{
- 			"comment" : "Assertion declarations",
-			"match" : "^\\(\\s*(assert)\\s+(\\(.+?\\)+)\\s*\\)$",
-			"captures" : {
-				"1" : {
-					"name" : "keyword.clp"
-				}
-			}
+			"match" : "=>",
+			"name" : "constant.language.clp"
 		}
+		
 	],
 	"repository" : {
-		
+		"comments" : {
+			"patterns" : [
+				{
+					"match" : "(;).*$\n?",
+					"name" : "comment.block.clp"
+				}
+			]
+		},
+		"keywords" : {
+			"patterns" : [
+				{
+					"match" : "\\(\\b(type|default|allowed-values|not|or|and|assert|retract|gensym|printout|declare|salience|modify|export)\\b",
+					"name" : "keyword.other.clp"
+				},
+				{
+					"match" : "\\(\\b(slot|multislot)\\b",
+					"name" : "storage.type.slot.clp"
+				}
+			]
+		}
 	}
 }
