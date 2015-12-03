@@ -3,10 +3,14 @@
 	"displayName": "Clips",
 	"description": "Clips Support for Visual Studio Code",
 	"version": "0.0.1",
-	"publisher": "fls",
+	"publisher": "rcrosbourne",
 	"engines": {
 		"vscode": "^0.10.1"
 	},
+	"repository": {
+        "type": "git",
+        "url": "https://github.com/rcrosbourne/clips.git"
+    },
 	"categories": [
 		"Languages"
 	],
