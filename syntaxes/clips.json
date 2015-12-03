@@ -5,6 +5,8 @@
 	"fileTypes" : [
 		"clp"
 	],
+	"foldingStartMarker" : "^\\(",
+	"foldingStopMarker": "\\)",
 	"patterns" : [
 		{
 			"comment" : "Line comments",
@@ -15,7 +17,23 @@
 					"name" : "punctuation.definition.comment.clp"
 				}
 			},
-			"name" : "comment.line.semi-colon.clp"
+			"name" : "comment.line.double-slash.clp"
+		},
+		{
+			"name" : "keyword.clp",
+			"match": "\\b(defrule|assert|retract)\\b"
+		},
+		{
+ 			"comment" : "Assertion declarations",
+			"match" : "^\\(\\s*(assert)\\s+(\\(.+?\\)+)\\s*\\)$",
+			"captures" : {
+				"1" : {
+					"name" : "keyword.clp"
+				}
+			}
 		}
-	]
+	],
+	"repository" : {
+		
+	}
 }
